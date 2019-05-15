@@ -9,6 +9,7 @@ const middleware = require("./middleware");
 
 const dashboardRouter = require("./routes/dashboard");
 const publicRouter = require("./routes/public");
+const logoutRoute = require("./routes/logOut");
 // const usersRouter = require("./routes/users");
 
 
@@ -50,15 +51,16 @@ app.use((req, res, next) => {
 });
 // Routes
 app.use("/", publicRouter);
+app.use("/users", logoutRoute);
 app.use("/dashboard", middleware.loginRequired, dashboardRouter);
 // app.use("/users", usersRouter);
 
 // Error handlers
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
