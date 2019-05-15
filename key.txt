@@ -1,0 +1,3 @@
+CliendID: 0oalm9r4fjoRzagiM356
+client secret: HRYUUl-VxkIO4WAS4O0WT7cKUfdya4dERVZdf5zg
+Token value: 00AHiDM36e3uBZTUXW58G-uvI-7Qjeslg7arrWVqYa
